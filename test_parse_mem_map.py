@@ -33,7 +33,7 @@ def test_multiple_attachments():
     prog_used= 'TBD'
     prog_usage= 'TBD'
 
-    allure.attach("""<head></head><body> XMicro1 Memory Map Table
+    allure.attach(f"""<head></head><body> XMicro1 Memory Map Table
         </body>
         <h1>Data acquired from *.map</h1>
         <table  style="border:3px #cccccc solid;" width="400" cellpadding="10" border='1'>
@@ -47,12 +47,12 @@ def test_multiple_attachments():
             <th width="200">Usage</th>
           </tr>
           <tr align="center">
-            <td width="200">{}</th>
-            <td width="200">{}</th>
-            <td width="200">{}</th>
-            <td width="200">{}</th>
-            <td width="200">{}</th>
-            <td width="200">{}</th>
-            <td width="200">{}</th>         
+            <td width="200">{field_prog}</th>
+            <td width="200">{prog_start_addr}</th>
+            <td width="200">{prog_end_addr}</th>
+            <td width="200">{prog_size}</th>
+            <td width="200">{prog_free}</th>
+            <td width="200">{prog_used}</th>
+            <td width="200">{prog_usage}</th>         
           </tr>
-        </table>""".format(prog_start_addr, prog_end_addr, prog_size, prog_free, prog_used, prog_usage), '擷取build code後的文檔數據', allure.attachment_type.HTML)
+        </table>""", '擷取build code後的文檔數據', allure.attachment_type.HTML)
